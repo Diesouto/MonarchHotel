@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>Monarch</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/favicon.svg">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div id="cabecera">
+        <h1>Servicio y discreción</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet</p>
+
+        <form id=form-cabecera>
+            <input placeholder="Check In" type="date">
+            <input placeholder="Check Out" type="date">
+            <input placeholder="Habitaciones" type="number">
+            <input placeholder="Pax." type="number">
+            <input value="Comprobar disponibilidad" type="submit">
+        </form>
+    </div>
+
+    <div id="content">
+        <div class="tarjeta-habitacion">
+            <h3>Nuestras Habitaciones</h3>
+            <p>Lorem ipsum dolor sit amet</p>
+            <button><a href="#">Ver más</a></button>
+        </div>
+        <div class="tarjeta-imagen">
+            <img src="habitacion1.jpg">
+        </div>
+
+
+        <div class="tarjeta-imagen">
+            <img src="habitacion1.jpg">
+        </div>
+
+        <div class="tarjeta-habitacion">
+            <h3>Nuestras Habitaciones</h3>
+            <p>Lorem ipsum dolor sit amet</p>
+            <button><a href="#">Ver más</a></button>
+        </div>
+
+        <h3>Vive la experiencia Monarch</h3>
+        <div id="contenedor-triple">
+            <img class="triple" src="gimnasio.jpg">
+            <img class="triple" src="tumbonas.jpg">
+            <img class="triple" src="masajes.jpg">
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+
+</html>
