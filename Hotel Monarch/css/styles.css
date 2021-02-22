@@ -1,0 +1,25 @@
+/*Global*/
+
+
+/* Cabecera */
+
+#header {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    float: right;
+}
+
+ul li:first-child {
+    float: left;
+}
+
+ul li a {
+    text-decoration: none;
+}
