@@ -1,0 +1,21 @@
+#header {
+    margin: 0%;
+    padding: 0%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#header li {
+    float: right;
+}
+
+#header li:first-child {
+    float: left;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}

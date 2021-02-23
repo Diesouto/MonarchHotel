@@ -1,0 +1,68 @@
+//Fuentes
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap');
+
+//Variables globales
+$colorPrincipal: #06e2c4;
+$fondoClaro: #f6f6f6;
+$fondoOscuro: #707070;
+$colorWarning: #e2c506;
+$colorDanger: #e25e06;
+
+$fuentePrincipal: 'Source Sans Pro';
+$fuenteSecundaria: 'Lato';
+
+
+/* CLASES GLOBALES */
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+.flex {
+    display: flex;
+}
+
+.inline li {
+    display: inline-block;
+}
+
+.button {
+    border: 0;
+    color: white;
+    background-color: $colorPrincipal;
+    padding: 0.5em;
+}
+
+.button:hover {
+    color: $colorPrincipal;
+    background-color: white;
+    font-weight: 100;
+}
+
+h1 {
+    font-family: $fuentePrincipal;
+    font-size: 71px;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: $fuentePrincipal;
+    font-size: 48px;
+    font-weight: normal;
+}
+
+p {
+    font-family: $fuenteSecundaria;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+hr {
+    width: 5em;
+}
+
+/* MÓDULOS */
+    @import '_header';
+    @import '_index';
+    @import '_footer';

@@ -10,13 +10,13 @@
         });
     </script>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="img/favicon.svg">
+    <link rel="icon" href="img/empresa/logo.svg">
 </head>
 
 <body>
     <div id="header"></div>
 
-    <div id="cabecera">
+    <div id="cabeceraIndex">
         <h1>Servicio y discreción</h1>
         <hr>
         <p>Lorem ipsum dolor sit amet</p>
@@ -26,36 +26,39 @@
             <input placeholder="Check Out" type="date">
             <input placeholder="Habitaciones" type="number">
             <input placeholder="Pax." type="number">
-            <input value="Comprobar disponibilidad" type="submit">
+            <input class="button" value="Comprobar disponibilidad" type="submit">
         </form>
     </div>
 
     <div id="content">
-        <div class="tarjeta-habitacion">
-            <h3>Nuestras Habitaciones</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <button><a href="#">Ver más</a></button>
-        </div>
-        <div class="tarjeta-imagen">
-            <img src="habitacion1.jpg">
-        </div>
-
-
-        <div class="tarjeta-imagen">
-            <img src="habitacion1.jpg">
+        <div class="flex">
+            <div class="tarjeta-habitacion">
+                <h3>Nuestras Habitaciones</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+                <a href="#"><button class="button">Ver más</button></a>
+            </div>
+            <div class="tarjeta-imagen">
+                <img src="img/habitaciones/doble.png">
+            </div>
         </div>
 
-        <div class="tarjeta-habitacion">
-            <h3>Nuestras Habitaciones</h3>
-            <p>Lorem ipsum dolor sit amet</p>
-            <button><a href="#">Ver más</a></button>
+        <div class="flex">
+            <div class="tarjeta-imagen">
+                <img src="img/servicios/piscina.png">
+            </div>
+    
+            <div class="tarjeta-habitacion">
+                <h3>Nuestras Habitaciones</h3>
+                <p>Lorem ipsum dolor sit amet</p>
+                <a href="#"><button class="button">Ver más</button></a>
+            </div>
         </div>
 
         <h3>Vive la experiencia Monarch</h3>
-        <div id="contenedor-triple">
-            <img class="triple" src="gimnasio.jpg">
-            <img class="triple" src="tumbonas.jpg">
-            <img class="triple" src="masajes.jpg">
+        <div id="contenedor-triple" class="flex">
+            <img class="triple" src="img/servicios/gimnasio.png">
+            <img class="triple" src="img/servicios/tumbonas.png">
+            <img class="triple" src="img/servicios/masajes.png">
         </div>
     </div>
 

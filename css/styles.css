@@ -1,0 +1,109 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap");
+/* CLASES GLOBALES */
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.inline li {
+  display: inline-block;
+}
+
+.button {
+  border: 0;
+  color: white;
+  background-color: #06e2c4;
+  padding: 0.5em;
+}
+
+.button:hover {
+  color: #06e2c4;
+  background-color: white;
+  font-weight: 100;
+}
+
+h1 {
+  font-family: "Source Sans Pro";
+  font-size: 71px;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: "Source Sans Pro";
+  font-size: 48px;
+  font-weight: normal;
+}
+
+p {
+  font-family: "Lato";
+  font-size: 20px;
+  font-weight: normal;
+}
+
+hr {
+  width: 5em;
+}
+
+/* MÓDULOS */
+#header {
+  margin: 0%;
+  padding: 0%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#header li {
+  float: right;
+}
+
+#header li:first-child {
+  float: left;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* CONTENT */
+#content {
+  width: 100%;
+  margin: auto;
+  margin: 5%;
+  text-align: center;
+}
+
+/* Cabecera index*/
+#cabeceraIndex {
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/header.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Contenedor servicios */
+#contenedor-triple img {
+  width: 33%;
+  border: white solid 5px;
+}
+
+/* FOOTER */
+#footer {
+  background-color: #707070;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */

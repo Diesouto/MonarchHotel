@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Grupo_44" data-name="Grupo 44" transform="translate(-4936 79)">
+    <path id="Sustracción_6" data-name="Sustracción 6" d="M20.635,16.275H13.943V8.6H6.663v7.673H0V0H6.663V3.943h7.28V0h6.692V16.275Z" transform="translate(4950.83 -57.587)" fill="#fff"/>
+    <path id="Unión_6" data-name="Unión 6" d="M13.843,6.116H10.317V3.594L20.635,0V6.116Zm-7.052,0H0V0L10.317,3.594V6.116Z" transform="translate(4950.83 -66.672)" fill="#06e2c4"/>
+    <g id="Elipse_21" data-name="Elipse 21" transform="translate(4936 -79)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" stroke-dasharray="1 4" opacity="0.9">
+      <circle cx="25" cy="25" r="25" stroke="none"/>
+      <circle cx="25" cy="25" r="24" fill="none"/>
+    </g>
+  </g>
+</svg>
