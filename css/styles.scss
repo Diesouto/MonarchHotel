@@ -52,6 +52,14 @@ h3 {
     font-weight: normal;
 }
 
+h4 {
+    font-family: $fuenteSecundaria;
+    font-size: 15px;
+    font-weight: normal;
+    color: $colorPrincipal;
+    margin: 0;
+}
+
 p {
     font-family: $fuenteSecundaria;
     font-size: 20px;
@@ -62,7 +70,19 @@ hr {
     width: 5em;
 }
 
+.danger {
+    color:$colorWarning;
+}
+
+.content {
+    width: 100%;
+    margin: auto;
+    margin: 5%;
+    text-align: center;
+}
+
 /* MÓDULOS */
     @import '_header';
     @import '_index';
+    @import '_contacto';
     @import '_footer';

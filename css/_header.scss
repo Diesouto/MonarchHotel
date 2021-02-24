@@ -1,6 +1,10 @@
 #header {
     margin: 0%;
     padding: 0%;
+    font-family: $fuentePrincipal;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
 }
 
 ul {
@@ -9,6 +13,9 @@ ul {
 
 #header li {
     float: right;
+    margin-top: 1em;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
 }
 
 #header li:first-child {

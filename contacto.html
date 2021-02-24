@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Monarch</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/empresa/logo.svg">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <div id="cabeceraIndex">
+        <div id="contenido-cabecera">
+            <h1>Contacto</h1>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="mapa">
+            <h4>Encuéntranos</h4>
+            <h3>Mapa</h3>
+            <div id="map"></div>
+        </div>
+
+        <div>
+            <h4>A tu disposición</h4>
+            <h3>Contacto</h3>
+            <div id="form-contacto">
+
+            </div>
+        </div>        
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSQUPGLwbw5W-Grk1x_ytMWgmnO6dPJJQ&callback=initMap&libraries=&v=weekly" async></script>
+</body>
+
+</html>
