@@ -133,6 +133,19 @@ ul li a {
   height: 400px;
 }
 
+.login * {
+  display: block;
+  margin: auto;
+}
+
+.signin {
+  width: 50%;
+}
+
+.signin form * {
+  display: block;
+}
+
 /* FOOTER */
 #footer {
   background-color: #707070;
