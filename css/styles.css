@@ -24,6 +24,10 @@ body {
   padding: 0.5em;
 }
 
+.redondo {
+  border-radius: 30px;
+}
+
 .button:hover {
   color: #06e2c4;
   background-color: white;
@@ -67,8 +71,20 @@ hr {
 .content {
   width: 100%;
   margin: auto;
-  margin: 5%;
+  padding: 5%;
   text-align: center;
+}
+
+.transparent {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.izquierda {
+  text-align: left;
+}
+
+.derecha {
+  text-align: right;
 }
 
 /* MÓDULOS */
@@ -101,7 +117,34 @@ ul li a {
   color: white;
 }
 
-/* CONTENT */
+#form-cabecera input {
+  height: 40px;
+}
+
+#form-cabecera input::-webkit-input-placeholder {
+  color: black;
+  font-family: "Lato";
+  font-weight: bold;
+}
+
+#form-cabecera input:-ms-input-placeholder {
+  color: black;
+  font-family: "Lato";
+  font-weight: bold;
+}
+
+#form-cabecera input::-ms-input-placeholder {
+  color: black;
+  font-family: "Lato";
+  font-weight: bold;
+}
+
+#form-cabecera input::placeholder {
+  color: black;
+  font-family: "Lato";
+  font-weight: bold;
+}
+
 /* Cabecera index*/
 #cabeceraIndex {
   margin: 0%;
@@ -112,6 +155,8 @@ ul li a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
+  text-align: center;
 }
 
 #contenido-cabecera {
@@ -125,6 +170,15 @@ ul li a {
 #contenedor-triple img {
   width: 33%;
   border: white solid 5px;
+}
+
+.tarjeta-habitacion {
+  border: 1px solid black;
+  overflow: visible;
+}
+
+.tarjeta-imagen1 {
+  overflow: hidden;
 }
 
 /* CONTENT */
@@ -147,8 +201,14 @@ ul li a {
 }
 
 /* FOOTER */
-#footer {
+footer {
   background-color: #707070;
   text-align: center;
+}
+
+.footer {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 /*# sourceMappingURL=styles.css.map */

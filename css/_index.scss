@@ -1,4 +1,12 @@
-/* CONTENT */
+#form-cabecera input {
+    height: 40px;
+}
+
+#form-cabecera input::placeholder {
+    color: black;
+    font-family: $fuenteSecundaria;
+    font-weight: bold;
+}
 
 /* Cabecera index*/
 #cabeceraIndex {
@@ -10,6 +18,8 @@
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 #contenido-cabecera {
@@ -22,4 +32,13 @@
 #contenedor-triple img {
     width: 33%;
     border: white solid 5px;
+}
+
+.tarjeta-habitacion {
+    border: 1px solid black;
+    overflow: visible;
+}
+
+.tarjeta-imagen1 {
+    overflow: hidden;
 }

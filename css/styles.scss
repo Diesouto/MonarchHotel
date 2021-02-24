@@ -34,6 +34,10 @@ body {
     padding: 0.5em;
 }
 
+.redondo {
+    border-radius: 30px;
+}
+
 .button:hover {
     color: $colorPrincipal;
     background-color: white;
@@ -77,8 +81,20 @@ hr {
 .content {
     width: 100%;
     margin: auto;
-    margin: 5%;
+    padding: 5%;
     text-align: center;
+}
+
+.transparent {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.izquierda {
+    text-align: left;
+}
+
+.derecha {
+    text-align: right;
 }
 
 /* MÓDULOS */
