@@ -1,0 +1,19 @@
+.about .izquierda {
+    width: 70%;
+}
+
+.about img {
+    width: 100%;
+}
+
+#fondo-testimonios {
+    background-color: $fondoClaro;
+    color: $black;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+#testimonios {
+    justify-content: space-evenly;
+}

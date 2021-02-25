@@ -3,11 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap');
 
 //Variables globales
-$colorPrincipal: #06e2c4;
-$fondoClaro: #f6f6f6;
+$colorPrincipal: #17e6ca;
+$fondoClaro: #D8D8D8;
 $fondoOscuro: #707070;
 $colorWarning: #e2c506;
 $colorDanger: #e25e06;
+$black: #1D1D1D;
 
 $fuentePrincipal: 'Source Sans Pro';
 $fuenteSecundaria: 'Lato';
@@ -64,6 +65,12 @@ h4 {
     margin: 0;
 }
 
+h5 {
+    font-family: $fuentePrincipal;
+    font-size: 12px;
+    color: $fondoClaro;
+}
+
 p {
     font-family: $fuenteSecundaria;
     font-size: 20px;
@@ -101,6 +108,8 @@ hr {
     @import '_header';
     @import '_index';
     @import '_contacto';
+    @import '_habitaciones';
+    @import '_about';
     @import '_login';
     @import '_signin';
     @import '_footer';

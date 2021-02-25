@@ -20,7 +20,7 @@ body {
 .button {
   border: 0;
   color: white;
-  background-color: #06e2c4;
+  background-color: #17e6ca;
   padding: 0.5em;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 .button:hover {
-  color: #06e2c4;
+  color: #17e6ca;
   background-color: white;
   font-weight: 100;
 }
@@ -50,8 +50,14 @@ h4 {
   font-family: "Lato";
   font-size: 15px;
   font-weight: normal;
-  color: #06e2c4;
+  color: #17e6ca;
   margin: 0;
+}
+
+h5 {
+  font-family: "Source Sans Pro";
+  font-size: 12px;
+  color: #D8D8D8;
 }
 
 p {
@@ -160,9 +166,6 @@ ul li a {
 }
 
 #contenido-cabecera {
-  width: 70%;
-  /* Can be in percentage also. */
-  height: auto;
   margin: 0 auto;
 }
 
@@ -185,6 +188,28 @@ ul li a {
 #map {
   width: 100%;
   height: 400px;
+}
+
+.about .izquierda {
+  width: 70%;
+}
+
+.about img {
+  width: 100%;
+}
+
+#fondo-testimonios {
+  background-color: #D8D8D8;
+  color: #1D1D1D;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 3em;
+}
+
+#testimonios {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .login * {

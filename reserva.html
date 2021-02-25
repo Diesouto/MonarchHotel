@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Monarch</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/empresa/logo.svg">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div id="cabeceraIndex">
+        <div id="contenido-cabecera">
+            <h1>Reserva</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="content">
+        <h4>A tu gusto</h4>
+        <h3>Filtrar</h3>
+
+        <div id="flex">
+
+            <div id="habitaciones">
+                
+            </div>
+
+            <div id="filtro">
+                <form>
+                    <label for="checkin">Fecha</label>
+                    <input name="checkin" type="date">
+                    <input name="checkout" type="date">
+                    
+                    <label for="checkin">Personas</label>
+                    <input name="checkin" type="number" placeholder="Num personas">
+                    
+                    <label for="checkin">Habitaciones</label>
+                    <input name="checkin" type="number" placeholder="Num habitaciones">
+
+                    <p>Precio: </p>
+                    <input type="range" min="10.50" max="50.00" step="0.50" />
+
+                    <input type="submit" value="Comprobar disponibilidad" class="button redondo">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+
+</html>
