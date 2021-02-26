@@ -26,3 +26,17 @@
 .info ul li {
     display: inline-block;
 }
+
+
+
+@media (min-width:480px)  { 
+    /* smartphones, Android phones, landscape iPhone */ 
+    
+    #habitaciones {
+        width:100%;
+    }
+
+    #filtro {
+        width: 100%;
+    }
+}

@@ -380,6 +380,16 @@ ul li a {
   display: inline-block;
 }
 
+@media (min-width: 480px) {
+  /* smartphones, Android phones, landscape iPhone */
+  #habitaciones {
+    width: 100%;
+  }
+  #filtro {
+    width: 100%;
+  }
+}
+
 .about .izquierda {
   width: 60%;
   margin-right: 10%;
