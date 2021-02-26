@@ -15,15 +15,16 @@
 </head>
 
 <body>
-    <div class="content">
+    <div id="login-contenedor flex" class="content">
         <div class="login">
             <h4>Bienvenido</h4>
             <h3>Inicia sesión</h3>
-            <form id="login">
-                <input name="email" placeholder="Email" type="text">
-                <input name="password" placeholder="Contraseña" type="password">
-                <input class="button redondo" type="submit" value="Iniciar Sesión">
+            <form id="login flex">
+                <input class="loginform form-row" name="email" placeholder="Email" type="text">
+                <input class="loginform form-row" name="password" placeholder="Contraseña" type="password">
+                <input id="submit" class="form-row button redondo" type="submit" value="Iniciar Sesión">
                 <a href="#">¿Has olvidado tu contraseña?</a>
+                <a href="signin.html">¿Aún no tienes una cuenta?</a>
             </form>
         </div>        
     </div>

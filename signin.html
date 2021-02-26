@@ -19,14 +19,16 @@
         <div class="signin">
             <h4>Bienvenido</h4>
             <h3>Regístrate</h3>
-            <form id="signin">
-                <input name="email" placeholder="Email" type="text">
-                <input name="password" placeholder="Contraseña" type="password">
-                <input type="submit" value="Iniciar Sesión">
-                <a href="#">¿Has olvidado tu contraseña?</a>
+            <form id="signin flex" class="signin-form">
+                <input id="nombre" class="form-row loginform" name="nombre" placeholder="Nombre" type="text">
+                <input id="nif" class="form-row loginform" name="nif" placeholder="NIF" type="text">
+                <input id="email" class="form-row loginform" name="email" placeholder="Email" type="text">
+                <input id="password" class="form-row loginform" name="password" placeholder="Contraseña" type="password">
+                <input id="confpassword" class="form-row loginform" name="confpassword" placeholder="Confirmar contraseña" type="password">
+                <input id="submit" class="form-row button redondo" type="submit" value="Crear cuenta">
             </form>
         </div>     
-        <div class="signin">
+        <div id="foto" class="signin">
             <img src="img/signin.png">
         </div>   
     </div>

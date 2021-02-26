@@ -110,7 +110,7 @@ ul {
 }
 
 .izquierda {
-    text-align: left;
+    text-align: start;
 }
 
 .derecha {
@@ -126,11 +126,29 @@ input {
     color: white;
 }
 
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-row input {
+    width: 100%;
+}
+
+.borde {
+    border: 0.5px solid $black;
+}
+
+.fondo-oscuro {
+    background-color: #F6F6F6;
+}
+
 /* MÓDULOS */
     @import '_header';
     @import '_index';
     @import '_contacto';
     @import '_habitaciones';
+    @import '_reserva';
     @import '_about';
     @import '_login';
     @import '_signin';

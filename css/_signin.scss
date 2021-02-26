@@ -1,7 +1,21 @@
 .signin {
     width: 50%;
+    text-align: start;
 }
 
 .signin form * {
     display: block;
+}
+
+.signin-form input {
+    margin-top: 1.5em;
+    width: 100%;
+}
+
+.signin img {
+    margin-top: 57px;
+}
+
+#foto {
+    text-align: center;
 }

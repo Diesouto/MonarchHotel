@@ -97,7 +97,7 @@ ul {
 }
 
 .izquierda {
-  text-align: left;
+  text-align: start;
 }
 
 .derecha {
@@ -111,6 +111,27 @@ input {
 
 .fab {
   color: white;
+}
+
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.form-row input {
+  width: 100%;
+}
+
+.borde {
+  border: 0.5px solid #1D1D1D;
+}
+
+.fondo-oscuro {
+  background-color: #F6F6F6;
 }
 
 /* MÓDULOS */
@@ -299,17 +320,8 @@ ul li a {
   margin-right: 1em;
 }
 
-.form-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.form-row input {
-  width: 100%;
+#form-contacto {
+  text-align: start;
 }
 
 #mensaje {
@@ -332,12 +344,22 @@ ul li a {
   text-align: start;
 }
 
-.about .izquierda {
-  width: 70%;
+#nombre {
+  width: 40%;
+  margin-right: 1em;
 }
 
-.about img {
-  width: 100%;
+.about .izquierda {
+  width: 60%;
+  margin-right: 10%;
+}
+
+.izquierda h5 {
+  margin-top: 4em;
+}
+
+#foto {
+  width: 40%;
 }
 
 #fondo-testimonios {
@@ -354,17 +376,60 @@ ul li a {
           justify-content: space-evenly;
 }
 
+.tarjeta-testimonio p {
+  width: 10em;
+}
+
 .login * {
+  width: 50%;
   display: block;
   margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .form-row {
+  width: 100%;
+  margin: 1em 0em;
+}
+
+.loginform {
+  border: 0.5px solid #1D1D1D;
+}
+
+#login-contenedor {
+  text-align: center;
+}
+
+.login a {
+  color: #D8D8D8;
+  margin-bottom: 0.5em;
 }
 
 .signin {
   width: 50%;
+  text-align: start;
 }
 
 .signin form * {
   display: block;
+}
+
+.signin-form input {
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+.signin img {
+  margin-top: 57px;
+}
+
+#foto {
+  text-align: center;
 }
 
 /* FOOTER */

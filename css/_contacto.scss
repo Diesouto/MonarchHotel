@@ -29,13 +29,8 @@
     margin-right: 1em;
 }
 
-.form-row {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.form-row input {
-    width: 100%;
+#form-contacto {
+    text-align: start;
 }
 
 #mensaje {
@@ -43,4 +38,9 @@
 }
 #mensaje::placeholder {
     text-align: start;
+}
+
+#nombre {
+    width: 40%;
+    margin-right: 1em;
 }

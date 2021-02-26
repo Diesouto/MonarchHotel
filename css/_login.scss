@@ -1,4 +1,26 @@
 .login * {
+    width: 50%;
     display: block;
     margin: auto;
+    justify-content: center;
+    align-items: center;
 }
+
+.login .form-row {
+    width: 100%;
+    margin: 1em 0em;
+}
+
+.loginform {
+    border: 0.5px solid $black;
+}
+
+#login-contenedor {
+    text-align: center;
+}
+
+.login a {
+    color: $fondoClaro;
+    margin-bottom: 0.5em;
+}
+
