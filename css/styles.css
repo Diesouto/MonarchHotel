@@ -349,6 +349,37 @@ ul li a {
   margin-right: 1em;
 }
 
+#habitaciones {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+}
+
+#filtro {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  text-align: start;
+}
+
+.foto {
+  width: 50%;
+}
+
+.foto img {
+  width: 100%;
+}
+
+.info {
+  background-color: white;
+  text-align: start;
+  padding: 2em;
+}
+
+.info ul li {
+  display: inline-block;
+}
+
 .about .izquierda {
   width: 60%;
   margin-right: 10%;

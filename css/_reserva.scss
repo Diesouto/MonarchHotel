@@ -1,0 +1,28 @@
+#habitaciones {
+    flex:70%;
+}
+
+
+
+#filtro {
+    flex: 30%;
+    text-align: start;
+}
+
+.foto {
+    width:50%;
+}
+
+.foto img {
+    width:100%;
+}
+
+.info {
+    background-color: white;
+    text-align: start;
+    padding: 2em;
+}
+
+.info ul li {
+    display: inline-block;
+}
