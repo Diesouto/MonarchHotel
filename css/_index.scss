@@ -6,6 +6,7 @@
 #form-cabecera input::placeholder {
     color: $fondoOscuro;
     font-family: $fuenteSecundaria;
+    padding-left: 1em;
 }
 
 /* Cabecera index*/
@@ -47,20 +48,47 @@
     border: white solid 5px;
 }
 
+
 .tarjeta-habitacion {
-    width: 60%;
+    background-color: white;
     height: 15em;
-    padding: 2.5em;
+    padding: 4em;
     border: 0.5px solid black;
-    overflow: visible;
+    z-index: 1;
+    width: 40%;
 }
 
 .tarjeta-imagen1 {
-    width: 40%;
+    width: 60%;
+    text-align: start;
+    margin-left: -100px;
+    margin-top: 50px;
+    z-index: 0;
     overflow: hidden;
 }
 
+.tarjeta-imagen1 img {
+    width: 100%;
+}
+
 .tarjeta-imagen2 {
-    width: 40%;
+    width: 60%;
+    text-align: start;
+    margin-right: -100px;
+    margin-top: 50px;
+    z-index: 0;
     overflow: hidden;
+}
+
+.tarjeta-imagen2 img {
+    width: 100%;
+}
+
+.tarjeta {
+    margin-bottom: 5em;
+}
+
+.vermas {
+    margin-top: 2em;
+    font-size:medium;
 }

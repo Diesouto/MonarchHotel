@@ -21,7 +21,7 @@ body {
   border: 0;
   color: white;
   background-color: #17e6ca;
-  padding: 0.5em;
+  padding: 1em;
 }
 
 .redondo {
@@ -155,21 +155,25 @@ ul li a {
 #form-cabecera input::-webkit-input-placeholder {
   color: #707070;
   font-family: "Lato";
+  padding-left: 1em;
 }
 
 #form-cabecera input:-ms-input-placeholder {
   color: #707070;
   font-family: "Lato";
+  padding-left: 1em;
 }
 
 #form-cabecera input::-ms-input-placeholder {
   color: #707070;
   font-family: "Lato";
+  padding-left: 1em;
 }
 
 #form-cabecera input::placeholder {
   color: #707070;
   font-family: "Lato";
+  padding-left: 1em;
 }
 
 /* Cabecera index*/
@@ -221,27 +225,78 @@ ul li a {
 }
 
 .tarjeta-habitacion {
-  width: 60%;
+  background-color: white;
   height: 15em;
-  padding: 2.5em;
+  padding: 4em;
   border: 0.5px solid black;
-  overflow: visible;
+  z-index: 1;
+  width: 40%;
 }
 
 .tarjeta-imagen1 {
-  width: 40%;
+  width: 60%;
+  text-align: start;
+  margin-left: -100px;
+  margin-top: 50px;
+  z-index: 0;
   overflow: hidden;
 }
 
+.tarjeta-imagen1 img {
+  width: 100%;
+}
+
 .tarjeta-imagen2 {
-  width: 40%;
+  width: 60%;
+  text-align: start;
+  margin-right: -100px;
+  margin-top: 50px;
+  z-index: 0;
   overflow: hidden;
+}
+
+.tarjeta-imagen2 img {
+  width: 100%;
+}
+
+.tarjeta {
+  margin-bottom: 5em;
+}
+
+.vermas {
+  margin-top: 2em;
+  font-size: medium;
 }
 
 /* CONTENT */
 #map {
   width: 100%;
   height: 400px;
+}
+
+#contenedor-contacto {
+  width: 80%;
+}
+
+#side {
+  text-align: start;
+}
+
+#side h5 {
+  margin-top: 0;
+}
+
+#side p {
+  margin-bottom: 0;
+}
+
+#social-contacto i {
+  color: black;
+}
+
+#social-contacto li {
+  display: inline-block;
+  margin-right: 1em;
 }
 
 .about .izquierda {
@@ -298,7 +353,21 @@ footer {
   margin: 1.5em 0em;
 }
 
+#logo-footer {
+  margin: 2em 0.5em;
+}
+
 #footer-social li {
   display: inline-block;
+  margin: 2.5em 0.5em;
+}
+
+#footer-contacto {
+  text-align: start;
+}
+
+#footer-contacto li a i {
+  margin-bottom: 0.2em;
+  margin-right: 1.5em;
 }
 /*# sourceMappingURL=styles.css.map */
