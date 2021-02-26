@@ -28,3 +28,19 @@
     display: inline-block;
     margin-right: 1em;
 }
+
+.form-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-row input {
+    width: 100%;
+}
+
+#mensaje {
+    height: 15em;
+}
+#mensaje::placeholder {
+    text-align: start;
+}

@@ -299,6 +299,39 @@ ul li a {
   margin-right: 1em;
 }
 
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.form-row input {
+  width: 100%;
+}
+
+#mensaje {
+  height: 15em;
+}
+
+#mensaje::-webkit-input-placeholder {
+  text-align: start;
+}
+
+#mensaje:-ms-input-placeholder {
+  text-align: start;
+}
+
+#mensaje::-ms-input-placeholder {
+  text-align: start;
+}
+
+#mensaje::placeholder {
+  text-align: start;
+}
+
 .about .izquierda {
   width: 70%;
 }
@@ -369,5 +402,19 @@ footer {
 #footer-contacto li a i {
   margin-bottom: 0.2em;
   margin-right: 1.5em;
+}
+
+.form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 1em;
+}
+
+.form-row input {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
