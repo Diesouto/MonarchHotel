@@ -34,10 +34,15 @@ body {
   font-weight: 100;
 }
 
+hr {
+  margin-bottom: 30px;
+}
+
 h1 {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 71px;
   font-weight: normal;
+  margin-bottom: 10px;
 }
 
 h3 {
