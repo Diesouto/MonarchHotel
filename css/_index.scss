@@ -45,10 +45,18 @@
 }
 
 .tarjeta-habitacion {
-    border: 1px solid black;
+    width: 60%;
+    height: 15em;
+    border: 0.5px solid black;
     overflow: visible;
 }
 
 .tarjeta-imagen1 {
+    width: 40%;
+    overflow: hidden;
+}
+
+.tarjeta-imagen2 {
+    width: 40%;
     overflow: hidden;
 }
