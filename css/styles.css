@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
 /* CLASES GLOBALES */
 body {
   margin: 0%;
@@ -35,15 +35,15 @@ body {
 }
 
 h1 {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 71px;
   font-weight: normal;
 }
 
 h3 {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 48px;
-  font-weight: normal;
+  font-weight: ultralight;
   margin: 0px 0px 40px 0px;
 }
 
@@ -56,7 +56,7 @@ h4 {
 }
 
 h5 {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 12px;
   color: #D8D8D8;
 }
@@ -112,10 +112,11 @@ input {
   width: 100%;
   margin: 0%;
   padding: 0%;
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", sans-serif;
   text-transform: uppercase;
   font-size: 0.8em;
   font-weight: bold;
+  margin-top: 2.5em;
 }
 
 ul {
@@ -125,13 +126,14 @@ ul {
 #header li {
   float: right;
   margin-top: 1.3em;
-  margin-right: 1.5em;
+  margin-right: 2.5em;
   margin-bottom: 1em;
 }
 
 #header li:first-child {
   float: left;
   margin-top: 0em;
+  margin-left: 2em;
 }
 
 ul li a {
@@ -139,28 +141,28 @@ ul li a {
   color: white;
 }
 
+#form-cabecera {
+  padding-top: 5em;
+}
+
 #form-cabecera input::-webkit-input-placeholder {
-  color: black;
+  color: #707070;
   font-family: "Lato";
-  font-weight: bold;
 }
 
 #form-cabecera input:-ms-input-placeholder {
-  color: black;
+  color: #707070;
   font-family: "Lato";
-  font-weight: bold;
 }
 
 #form-cabecera input::-ms-input-placeholder {
-  color: black;
+  color: #707070;
   font-family: "Lato";
-  font-weight: bold;
 }
 
 #form-cabecera input::placeholder {
-  color: black;
+  color: #707070;
   font-family: "Lato";
-  font-weight: bold;
 }
 
 /* Cabecera index*/
@@ -177,7 +179,7 @@ ul li a {
 
 #cabeceraPag {
   margin: 0%;
-  height: 40%;
+  height: 30%;
   padding: 0%;
   background-image: url("../img/header.png");
   background-position: center;

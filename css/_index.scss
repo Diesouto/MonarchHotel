@@ -1,8 +1,11 @@
 
+#form-cabecera {
+    padding-top: 5em;
+}
+
 #form-cabecera input::placeholder {
-    color: black;
+    color: $fondoOscuro;
     font-family: $fuenteSecundaria;
-    font-weight: bold;
 }
 
 /* Cabecera index*/
@@ -19,7 +22,7 @@
 
 #cabeceraPag {
     margin: 0%;
-    height: 40%;
+    height: 30%;
     padding: 0%;
     background-image: url("../img/header.png");
     background-position: center; 
