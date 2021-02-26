@@ -1,6 +1,3 @@
-#form-cabecera input {
-    height: 40px;
-}
 
 #form-cabecera input::placeholder {
     color: black;
@@ -12,8 +9,18 @@
 #cabeceraIndex {
     margin: 0%;
     padding: 0%;
-    width: 100%;
-    height: 100%;
+    background-image: url("../img/header.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+#cabeceraPag {
+    margin: 0%;
+    height: 40%;
+    padding: 0%;
     background-image: url("../img/header.png");
     background-position: center; 
     background-repeat: no-repeat; 
@@ -23,7 +30,12 @@
 }
 
 #contenido-cabecera {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Contenedor servicios */

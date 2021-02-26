@@ -2,11 +2,19 @@
 footer {
     background-color: $fondoOscuro;
     text-align: center;
+    font-family: $fuenteSecundaria;
+    color: white;
 }
 
 .footer {
     justify-content: space-evenly;
+    margin-top: 4em;
 }
 
-#logo-footer {
+.footer ul {
+    margin: 1.5em 0em;
+}
+
+#footer-social li {
+    display: inline-block;
 }

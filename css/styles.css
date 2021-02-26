@@ -44,6 +44,7 @@ h3 {
   font-family: "Source Sans Pro";
   font-size: 48px;
   font-weight: normal;
+  margin: 0px 0px 40px 0px;
 }
 
 h4 {
@@ -51,7 +52,7 @@ h4 {
   font-size: 15px;
   font-weight: normal;
   color: #17e6ca;
-  margin: 0;
+  margin: 40px 0px 0px 0px;
 }
 
 h5 {
@@ -70,15 +71,18 @@ hr {
   width: 5em;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .danger {
   color: #e2c506;
 }
 
 .content {
-  width: 100%;
-  margin: auto;
-  padding: 5%;
   text-align: center;
+  padding: 0em 5em;
 }
 
 .transparent {
@@ -93,8 +97,19 @@ hr {
   text-align: right;
 }
 
+input {
+  border: none;
+  height: 40px;
+}
+
+.fab {
+  color: white;
+}
+
 /* MÓDULOS */
 #header {
+  position: absolute;
+  width: 100%;
   margin: 0%;
   padding: 0%;
   font-family: "Source Sans Pro";
@@ -109,22 +124,19 @@ ul {
 
 #header li {
   float: right;
-  margin-top: 1em;
+  margin-top: 1.3em;
   margin-right: 1.5em;
   margin-bottom: 1em;
 }
 
 #header li:first-child {
   float: left;
+  margin-top: 0em;
 }
 
 ul li a {
   text-decoration: none;
   color: white;
-}
-
-#form-cabecera input {
-  height: 40px;
 }
 
 #form-cabecera input::-webkit-input-placeholder {
@@ -155,8 +167,18 @@ ul li a {
 #cabeceraIndex {
   margin: 0%;
   padding: 0%;
-  width: 100%;
-  height: 100%;
+  background-image: url("../img/header.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+#cabeceraPag {
+  margin: 0%;
+  height: 40%;
+  padding: 0%;
   background-image: url("../img/header.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -166,7 +188,21 @@ ul li a {
 }
 
 #contenido-cabecera {
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* Contenedor servicios */
@@ -229,11 +265,22 @@ ul li a {
 footer {
   background-color: #707070;
   text-align: center;
+  font-family: "Lato";
+  color: white;
 }
 
 .footer {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: 4em;
+}
+
+.footer ul {
+  margin: 1.5em 0em;
+}
+
+#footer-social li {
+  display: inline-block;
 }
 /*# sourceMappingURL=styles.css.map */
