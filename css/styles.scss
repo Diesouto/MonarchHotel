@@ -122,6 +122,11 @@ input {
     height: 40px;
 }
 
+input:focus {
+    border: 3px solid $colorPrincipal;
+    outline: none;
+}
+
 .fab {
     color: white;
 }

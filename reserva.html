@@ -2,7 +2,10 @@
 
 <head>
     <title>Monarch</title>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script>
         $(function() {
             $("#header").load("header.html");
@@ -26,7 +29,7 @@
         <h4>A tu gusto</h4>
         <h3>Filtrar</h3>
 
-        <div class="flex">
+        <div id="contenedorfiltro" class="flex">
             <div id="habitaciones">
                 <div class="habitacion flex">
                     <div class="foto">
@@ -56,19 +59,27 @@
             <div id="filtro">
                 <form>
                     <ul>
-                        <p>Fecha</p>
+                        <li class="form-row"><p>Fecha</p></li>
                         <li class="form-row">
-                            <input id="nombre" type="text" placeholder="Nombre">
-                            <input id="email" type="text" placeholder="Email">  
+                            <input type="text" placeholder="Check In" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Check Out" onfocus="(this.type='date')">
+                        </li>
+                        <li id="spanTexto" class="form-row">
+                            <p>Personas</p>
+                            <p>Habitaciones</p>
                         </li>
                         <li class="form-row">
-                            <input id="asunto" type="text" placeholder="Asunto">
+                            <input placeholder="Pax." type="number">
+                            <input placeholder="Habitaciones" type="number">
                         </li>
                         <li class="form-row">
-                            <input id="mensaje" type="text" placeholder="Mensaje">
+                            <div class="slidecontainer">
+                                <p>Precio: <span id="demo"></span></p>
+                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            </div>
                         </li>
                         <li class="form-row">
-                            <input class="button" type="submit" value="Enviar">
+                            <input class="button redondo" value="Comprobar disponibilidad" type="submit">
                         </li>
                     </ul>
                 </form>
@@ -77,6 +88,9 @@
     </div>
 
     <div id="footer"></div>
+
+    <script src="js/sliderPrecio.js"></script>
+    
 </body>
 
 </html>
