@@ -354,48 +354,6 @@ ul li a {
   margin-right: 1em;
 }
 
-#habitaciones {
-  -webkit-box-flex: 70%;
-      -ms-flex: 70%;
-          flex: 70%;
-}
-
-#filtro {
-  -webkit-box-flex: 30%;
-      -ms-flex: 30%;
-          flex: 30%;
-  text-align: start;
-}
-
-.foto {
-  width: 50%;
-}
-
-.foto img {
-  width: 100%;
-}
-
-.info {
-  background-color: white;
-  text-align: start;
-  padding: 2em;
-}
-
-.info ul li {
-  display: inline-block;
-}
-
-#contenedorfiltro {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-#spanTexto p {
-  width: 100%;
-}
-
 @media (max-width: 960px) {
   /* smartphones, Android phones, landscape iPhone */
   #habitaciones {
@@ -413,6 +371,107 @@ ul li a {
   }
 }
 
+#habitaciones {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+}
+
+#filtro {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  text-align: start;
+}
+
+#filtro * {
+  margin-top: 0;
+}
+
+#filtro li {
+  padding-top: 0;
+}
+
+#filtro li input {
+  margin: 0 3px;
+}
+
+/**?**/
+#contentfiltro {
+  margin-top: 0;
+}
+
+#contentfiltro h4 {
+  margin-top: 0;
+  padding-top: 1em;
+}
+
+/**/
+.foto {
+  width: 50%;
+}
+
+.foto img {
+  width: 100%;
+}
+
+.info {
+  background-color: white;
+  text-align: start;
+  padding: 2em;
+}
+
+.info * {
+  margin: 0;
+  padding: 0;
+}
+
+.info ul li {
+  display: inline-block;
+}
+
+.info ul li {
+  margin-top: 1em;
+  margin-right: 2.5em;
+}
+
+#contenedorfiltro {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#spanTexto p {
+  width: 100%;
+}
+
+/*INFORESERVA*/
+#inforeserva {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #17e6ca;
+  color: white;
+  text-align: center;
+}
+
+#inforeserva form {
+  margin: 0%;
+  width: 100%;
+}
+
+#inforeserva form * {
+  display: inline-block;
+  height: 100%;
+}
+
+#inforeserva form div {
+  border-right: 1px solid white;
+  padding: 0 1em;
+}
+
 /*SLIDER*/
 .slidecontainer {
   width: 100%;
@@ -421,7 +480,7 @@ ul li a {
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 15px;
+  height: .5em;
   border-radius: 5px;
   background: #D8D8D8;
   outline: none;
@@ -435,12 +494,16 @@ ul li a {
   opacity: 1;
 }
 
+.slider:focus {
+  background-color: #17e6ca;
+}
+
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 100%;
   background: #17e6ca;
   cursor: pointer;
 }
@@ -574,7 +637,7 @@ footer {
 
 #footer-contacto li a i {
   margin-bottom: 0.2em;
-  margin-right: 1.5em;
+  margin-right: 0.5em;
 }
 
 .form-row {

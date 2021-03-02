@@ -1,3 +1,16 @@
+@media (max-width:960px)  { 
+    /* smartphones, Android phones, landscape iPhone */ 
+    
+    #habitaciones {
+        flex: 0 0 100%;
+    }
+
+    #filtro {
+        order: -1;
+        flex: 0 0 100%;
+    }
+}
+
 #habitaciones {
     flex:70%;
 }
@@ -6,6 +19,31 @@
     flex: 30%;
     text-align: start;
 }
+
+#filtro * {
+    margin-top: 0;
+}
+
+#filtro li {
+    padding-top: 0;
+}
+
+#filtro li input {
+    margin: 0 3px;
+}
+
+/**?**/
+#contentfiltro {
+    margin-top: 0;
+}
+
+#contentfiltro h4{
+    margin-top: 0;
+    padding-top: 1em;
+}
+/**/
+
+
 
 .foto {
     width:50%;
@@ -21,8 +59,18 @@
     padding: 2em;
 }
 
+.info * {
+    margin: 0;
+    padding: 0;
+}
+
 .info ul li {
     display: inline-block;
+}
+
+.info ul li {
+    margin-top: 1em;
+    margin-right: 2.5em;
 }
 
 #contenedorfiltro {
@@ -34,17 +82,31 @@
     width: 100%;
 }
 
-@media (max-width:960px)  { 
-    /* smartphones, Android phones, landscape iPhone */ 
-    
-    #habitaciones {
-        flex: 0 0 100%;
-    }
 
-    #filtro {
-        order: -1;
-        flex: 0 0 100%;
-    }
+/*INFORESERVA*/
+#inforeserva {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $colorPrincipal;
+    color: white;
+    text-align: center;
+ }
+
+ #inforeserva form {
+     margin: 0%;
+     width: 100%;
+ }
+
+ #inforeserva form * {
+     display: inline-block;
+     height: 100%;
+ }
+
+ #inforeserva form div {
+    border-right: 1px solid white;
+    padding: 0 1em
 }
 
 
@@ -56,7 +118,7 @@
   .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 15px;
+    height: .5em;
     border-radius: 5px;
     background: $fondoClaro;
     outline: none;
@@ -68,13 +130,17 @@
   .slider:hover {
     opacity: 1;
   }
+
+  .slider:focus {
+      background-color: $colorPrincipal;
+  }
   
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 100%;
     background: $colorPrincipal;
     cursor: pointer;
   }
