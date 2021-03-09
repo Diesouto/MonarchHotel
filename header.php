@@ -16,6 +16,9 @@
                 if (!isset($_SESSION['usuario'])) {
                     echo '<a href="login.php">Inicia sesión</a>';
                 }
+                elseif ($_SESSION['usuario'][6] == 0) {
+                    echo '<a href="admin.php">Administrar</a>';
+                }
                 else {
                     echo '<a href="cuenta.php">Tu Cuenta</a>';
                 }
