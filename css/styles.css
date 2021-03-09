@@ -81,8 +81,17 @@ ul {
   padding: 0;
 }
 
-.danger {
+.warning {
   color: #e2c506;
+}
+
+.danger {
+  color: white;
+  background-color: #e25e06;
+}
+
+.danger:hover {
+  color: #e25e06;
 }
 
 .content {
@@ -601,6 +610,17 @@ ul li a {
 
 #foto {
   text-align: center;
+}
+
+#menuUsuario {
+  font-family: "Lato";
+  width: 100%;
+  margin-bottom: -1em;
+}
+
+#menuUsuario li {
+  display: inline-block;
+  width: 33%;
 }
 
 /* FOOTER */

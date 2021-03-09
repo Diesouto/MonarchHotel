@@ -94,8 +94,17 @@ ul {
     padding: 0;
 }
 
-.danger {
+.warning {
     color:$colorWarning;
+}
+
+.danger {
+    color: white;
+    background-color: $colorDanger;
+}
+
+.danger:hover {
+    color: $colorDanger;
 }
 
 .content {
@@ -157,4 +166,5 @@ input:focus {
     @import '_about';
     @import '_login';
     @import '_signin';
+    @import '_cuenta';
     @import '_footer';

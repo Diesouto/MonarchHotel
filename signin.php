@@ -8,12 +8,19 @@
     <link rel="icon" href="img/empresa/logo.svg">
 </head>
 
+<?php
+    include "gestorBBDD.php";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        signin();
+    }
+?>
+
 <body>
     <div class="content flex">
         <div class="signin">
             <h4>Bienvenido</h4>
             <h3>Regístrate</h3>
-            <form id="signin flex" class="signin-form">
+            <form id="signin flex" class="signin-form" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
                 <input id="nombre" class="form-row loginform" name="nombre" placeholder="Nombre" type="text">
                 <input id="nombre" class="form-row loginform" name="telefono" placeholder="Telefono" type="number">
                 <input id="email" class="form-row loginform" name="email" placeholder="Email" type="text">

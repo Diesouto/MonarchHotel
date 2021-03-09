@@ -52,7 +52,7 @@ function comprobar_usuario($email, $clave) {
     $bd = loadBBDD();
     $hash = loadPass($email);
     if (password_verify($clave, $hash)) {
-        $ins = "select id, nombre, email, rol_usuario from usuarios where email = '$email' ";
+        $ins = "select * from usuarios where email = '$email' ";
         $resul = $bd->query($ins);
         if ($resul->rowCount() === 1) {
             $devol = $resul->fetch();
@@ -68,11 +68,16 @@ function comprobar_sesion() {
 }
 
 function signin() {
-    if($_POST['password']===$_POST['confpassword']){
+    if($_POST['password'] == $_POST['confpassword']){
         $bd = loadBBDD();
         $hash = password_hash($_POST['password'], PASSWORD_BCRYPT); 
-        $ins = 'INSERT INTO usuarios (id, nombre, email, telf, direccion, password, rol_usuario) VALUES (NULL, $_POST["nombre"], $_POST["email"], $_POST["telefono"], $_POST["direccion"], $hash, 1)';
+        $nombre = $_POST["nombre"]; 
+        $email = $_POST["email"]; 
+        $telefono = $_POST["telefono"];
+        $direccion = $_POST["direccion"];
+        $ins = "INSERT INTO usuarios (id, nombre, email, telf, direccion, password, rol_usuario) VALUES (NULL, $nombre, $email, $telefono, $direccion, $hash, 1)";
         $bd->query($ins);
+        login();
     }
 }
 
@@ -82,9 +87,8 @@ function login() {
         header("Location: login.php?error=true");
     } else {
         session_start();
-        // $usu tiene campos correo y codRes, correo 
-        $_SESSION['usuario'] = $usu; //array de 4 elementos
-        $_SESSION['reserva'] = [];
+        $_SESSION["usuario"] = $usu; 
+        $_SESSION["reserva"] = [];
         header("Location: index.php");
         return;
     }
@@ -95,6 +99,7 @@ function logout() {
     $_SESSION=array(); //Destruye las variables de sesión
     session_destroy(); // Elimina la sesion
     setcookie(session_name(), 123, time() - 1000); // Elimina la cookie de sesión
+    header("Location: index.php");
 }
 
 #endregion

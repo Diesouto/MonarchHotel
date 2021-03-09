@@ -3,8 +3,6 @@
 <head>
     <title>Monarch</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="img/empresa/logo.svg">
 </head>
 
 <body>
@@ -15,30 +13,41 @@
 
     <?php
         comprobar_sesion();
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if ($_POST['cambiaDatos']) {
+
+            } 
+            else if($_POST['logout']) {
+                logout();
+            }   
+        }
     ?>
 
     <div id="cabeceraPag">
         <div id="contenido-cabecera">
             <h1>Tu cuenta</h1>
+            <ul id="menuUsuario">
+                <li>Perfil</li>
+                <li>Reservas activas</li>
+                <li>Reservas realizadas</li>
+            </ul>
         </div>
-        <ul>
-            <li>Perfil</li>
-            <li>Reservas activas</li>
-            <li>Reservas realizadas</li>
-        </ul>
     </div>
 
     <div class="content">
-        <div class="flex about">
-            <div class="izquierda">
-                <h3>Nuestra Historia</h3>
-                <p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Integer Ante Mi, Maximus At Elit Consectetur, Facilisis Porttitor Quam. Etiam Iaculis At Urna Nec Blandit. Donec Porta Accumsan Venenatis. Donec Ullamcorper, Orci Et Dictum Euismod, Nisl Nulla Aliquam Arcu, Nec Rutrum Metus Magna Venenatis Libero. </p>
-                <h5>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit. Integer Ante Mi, Maximus At Elit Consectetur</h5>
-            </div>
-            <div id="foto">
-                <img src="img/servicios/instalaciones.png">
-            </div>
-        </div>
+        <h3>Tus datos</h3>
+        <ul>
+            <li>Nombre: <?php echo $_SESSION['usuario'][1]?></li>
+            <li>Email: <?php echo $_SESSION['usuario'][2]?></li>
+            <li>Teléfono: <?php echo $_SESSION['usuario'][3]?></li>
+            <li>Dirección: <?php echo $_SESSION['usuario'][4]?></li>
+            <li>
+                <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
+                    <input id="logout" name="logout" class="form-row button danger" type="submit" value="Cerrar Sesión">
+                </form>
+            </li>
+        </ul>
     </div>
 
     <div id="footer">

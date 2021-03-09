@@ -18,7 +18,7 @@
         }
 
         if (isset($_GET["redirigido"])) {
-            echo "<p>Haga login para continuar</p>";
+            echo '$(".warning").append("<p>Haga login para continuar</p>")';
         }
 
         if (isset($_GET["error"])) {
@@ -28,6 +28,7 @@
 
     <div id="login-contenedor flex" class="content">
         <div class="login">
+            <div class = "warning"></div>
             <h4>Bienvenido</h4>
             <h3>Inicia sesión</h3>
             <form id="login flex" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
