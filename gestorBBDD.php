@@ -75,8 +75,10 @@ function signin() {
         $email = $_POST["email"]; 
         $telefono = $_POST["telefono"];
         $direccion = $_POST["direccion"];
-        $ins = "INSERT INTO usuarios (id, nombre, email, telf, direccion, password, rol_usuario) VALUES (NULL, $nombre, $email, $telefono, $direccion, $hash, 1)";
-        $bd->query($ins);
+        
+        $sql = "INSERT INTO usuarios (id, nombre, email, telf, direccion, password, rol_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt= $bd->prepare($sql);
+        $stmt->execute([null, $nombre, $email, $telefono, $direccion, $hash, 1]);
         login();
     }
 }
