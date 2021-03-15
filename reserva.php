@@ -48,8 +48,8 @@
                         </li>
                         <li class="form-row">
                             <div class="slidecontainer">
-                                <p>Precio: <span id="demo"></span></p>
-                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                                <p>Precio < <span id="demo"></span></p>
+                                <input type="range" min="1" max="100" value="100" class="slider" id="myRange">
                             </div>
                         </li>
                         <li class="form-row">

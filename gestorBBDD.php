@@ -159,7 +159,7 @@ function getHabitaciones () {
                                     <ul>
                                         <li>
                                             <h5>Tamaño</h5>
-                                            <p>' . $row['m2'] .'</p>
+                                            <p>' . $row['m2'] .'m<sup>2</sup></p>
                                             <h5>Ventana</h5>
                                             <p>' . $row['ventana'] .'</p>
                                         </li>
@@ -170,7 +170,15 @@ function getHabitaciones () {
                                             <p>' . $row['internet'] .'</p>
                                         </li>
                                     </ul>
-                                    <a href="#"><button class="button">Más información</button></a>
+                                    <form action = "' . htmlspecialchars($_SERVER["PHP_SELF"]) .'" method = "POST">
+                                        <input name="tipo_de_habitacion" type="hidden" value="' . $row['tipo_de_habitacion'] .'">
+                                        <input name="precio" type="hidden" value="' . $row['precio'] .'">
+                                        <input name="m2" type="hidden" value="' . $row['m2'] .'">
+                                        <input name="ventana" type="hidden" value="' . $row['ventana'] .'">
+                                        <input name="servicio_limpieza" type="hidden" value="' . $row['servicio_limpieza'] .'">
+                                        <input name="internet" type="hidden" value="' . $row['internet'] .'">
+                                        <input name="cargarDatos" class="button" type="submit" value="Reservar">
+                                    </form>
                                 </div>
                             </div>';
         }
@@ -223,6 +231,9 @@ function getHabitacion ($id) {
     return $resultado;
 }
 
+
+
+
 #endregion
 
 
@@ -252,6 +263,39 @@ function addHabitacion () {
     unset($stmt);
 }
 
+
+function addDatosReserva() {
+    $checkin = $_POST['checkin'];
+    $chekout = $_POST['checkout'];
+    $diasReserva = $chekout->diff($checkin)->format("%a");
+
+    $_SESSION['reserva'][0] = $_SESSION['usuario'][0];
+    $_SESSION['reserva'][1] = $checkin;
+    $_SESSION['reserva'][2] = $diasReserva;
+}
+
+function addReserva() {
+    session_start();
+    $bd = loadBBDD();
+    $sql = "INSERT INTO RESERVAS (`num_reserva`, `id_usuario`, `fecha_reserva`, `num_dias`)
+            VALUES (?,?,?,?)";
+
+    try {
+        $stmt = $bd->prepare($sql);
+
+        $stmt->bindValue(1, null);
+        $stmt->bindValue(2, $_SESSION['reserva'][0]);
+        $stmt->bindValue(3, $_SESSION['reserva'][1]);
+        $stmt->bindValue(4, $_SESSION['reserva'][2]);
+
+        $stmt->execute();
+    } 
+    catch (\Exception $e) {
+        $bd->rollback();
+        throw $e;
+    }
+    unset($stmt);
+}
 
 #endregion
 

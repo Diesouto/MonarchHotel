@@ -72,6 +72,10 @@ p {
   font-weight: normal;
 }
 
+sup {
+  font-size: 13px;
+}
+
 hr {
   width: 5em;
 }
