@@ -21,7 +21,7 @@
                 <input class="transparent" type="text" placeholder="Check Out" onfocus="(this.type='date')">
                 <input class="transparent" placeholder="Habitaciones" type="number">
                 <input class="transparent" placeholder="Pax." type="number">
-                <input class="button" value="Comprobar disponibilidad" type="submit">
+                <input class="button" value="Check Availability" type="submit">
             </form>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <div class="content">
         <div class="flex tarjeta">
             <div class="tarjeta-habitacion izquierda">
-                <h3>Nuestras Habitaciones</h3>
+                <h3>Our Rooms</h3>
                 <p>Lorem ipsum dolor sit amet</p>
                 <a href="#"><button class="button vermas">Ver más</button></a>
             </div>
@@ -44,13 +44,13 @@
             </div>
     
             <div class="tarjeta-habitacion derecha">
-                <h3>Nuestros Servicios</h3>
+                <h3>Our Services</h3>
                 <p>Lorem ipsum dolor sit amet</p>
                 <a href="#"><button class="button vermas">Ver más</button></a>
             </div>
         </div>
 
-        <h3>Vive la experiencia Monarch</h3>
+        <h3>Live a Monarch experience</h3>
         <div id="contenedor-triple" class="flex">
             <img class="triple" src="img/servicios/gimnasio.png">
             <img class="triple" src="img/servicios/tumbonas.png">
