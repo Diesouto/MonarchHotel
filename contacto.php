@@ -8,10 +8,16 @@
 </head>
 
 <body>
-
     <div id="header">
         <?php include "header.php" ?>
     </div>
+
+    <?php   
+        if (isset($_POST["enviar_correo"])) {
+            enviar_email_contacto();
+            $texto = "Correo enviado con éxito";
+        }
+    ?>
 
     <div id="cabeceraPag">
         <div id="contenido-cabecera">
@@ -20,6 +26,9 @@
     </div>
 
     <div class="content">
+
+        <?php if (isset($texto)) {echo "<p class='button'>$texto</p>";}?>
+        
         <div id="mapa">
             <h4>Encuéntranos</h4>
             <h3>Mapa</h3>
@@ -31,26 +40,25 @@
             <h3>Contacto</h3>
             <div class="flex">
                 <div id="contenedor-contacto">
-                    <form id="form-contacto">
+                    <form id="form-contacto" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
                         <p>Envíanos un correo</p>
                         <ul>
                             <li class="form-row">
-                                <input class="borde" id="nombre" type="text" placeholder="Nombre">
-                                <input class="borde" id="email" type="text" placeholder="Email">  
+                                <input name="nombre" class="borde" id="nombre" type="text" placeholder="Nombre">
+                                <input name="email" class="borde" id="email" type="text" placeholder="Email">  
                             </li>
                             <li class="form-row">
-                                <input class="borde" id="asunto" type="text" placeholder="Asunto">
+                                <input name="asunto" class="borde" id="asunto" type="text" placeholder="Asunto">
                             </li>
                             <li class="form-row">
-                                <input class="borde" id="mensaje" type="text" placeholder="Mensaje">
+                                <input name="mensaje" class="borde" id="mensaje" type="text" placeholder="Mensaje">
                             </li>
                             <li class="form-row">
-                                <input class="button borde" type="submit" value="Enviar">
+                                <input name="enviar_correo" class="button borde" type="submit" value="Enviar">
                             </li>
                         </ul>
                         
                     </form>
-
 
 
                 </div>

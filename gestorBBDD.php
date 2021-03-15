@@ -107,11 +107,223 @@ function logout() {
 #endregion
 
 
-#region CargarContenidos
+#region Gets
+
+function getAlert($texto) {
+    echo "<script type='text/javascript'>
+                alert($texto);
+          </script>";
+}
+
+function getTiposHabitacion ($select = 0) {
+    $bd = loadBBDD();
+    $stmt = "";
+    $resultado = "";
+    $sql = "select * from habitacion_tipo";
+
+    if (($stmt = $bd->query($sql))) {
+        while ($row = $stmt->fetch($bd::FETCH_BOTH)) {
+            if ($row['id'] == $select) {
+                $resultado .= '<option value="' . $row['tipo_habitacion'] . '" selected="selected">'
+                        . $row['tipo_habitacion'] . '</option>';
+            } else {
+                $resultado .= '<option value="' . $row['tipo_habitacion'] . '">'
+                        . $row['tipo_habitacion'] . '</option>';
+            }
+        }
+    } else {
+        echo "ERROR: " . print_r($bd->errorInfo());
+    }
+
+    unset($stmt);
+
+    return $resultado;
+}
+
+
+function getHabitaciones () {
+    $bd = loadBBDD();
+    $stmt = "";
+    $resultado = "";
+    $sql = "select * from habitaciones";
+
+    if (($stmt = $bd->query($sql))) {
+        while ($row = $stmt->fetch($bd::FETCH_BOTH)) {
+            $resultado .= '<div class="habitacion flex">
+                                <div class="foto">
+                                    <img src="img/habitaciones/simple.png">
+                                </div>
+                                <div class="info">
+                                    <h3>' . $row['tipo_de_habitacion'] .'</h3>
+                                    <h4>' . $row['precio'] .'</h4>
+                                    <ul>
+                                        <li>
+                                            <h5>Tamaño</h5>
+                                            <p>' . $row['m2'] .'</p>
+                                            <h5>Ventana</h5>
+                                            <p>' . $row['ventana'] .'</p>
+                                        </li>
+                                        <li>
+                                            <h5>Servicio limpieza</h5>
+                                            <p>' . $row['servicio_limpieza'] .'</p>
+                                            <h5>Internet</h5>
+                                            <p>' . $row['internet'] .'</p>
+                                        </li>
+                                    </ul>
+                                    <a href="#"><button class="button">Más información</button></a>
+                                </div>
+                            </div>';
+        }
+    } else {
+        echo "ERROR: " . print_r($bd->errorInfo());
+    }
+
+    unset($stmt);
+
+    return $resultado;
+}
+
+function getHabitacion ($id) {
+    $bd = loadBBDD();
+    $stmt = "";
+    $resultado = "";
+    $sql = "select * from habitaciones where id = $id";
+
+    if (($stmt = $bd->query($sql))) {
+        $row = $stmt->fetch($bd::FETCH_BOTH);
+        $resultado = '<div class="habitacion flex">
+                            <div class="foto">
+                                <img src="img/habitaciones/simple.png">
+                            </div>
+                            <div class="info">
+                                <h3>' . $row['tipo_de_habitacion'] .'</h3>
+                                <h4>' . $row['precio'] .'</h4>
+                                <ul>
+                                    <li>
+                                        <h5>Tamaño</h5>
+                                        <p>' . $row['m2'] .'</p>
+                                        <h5>Ventana</h5>
+                                        <p>' . $row['ventana'] .'</p>
+                                    </li>
+                                    <li>
+                                        <h5>Servicio limpieza</h5>
+                                        <p>' . $row['servicio_limpieza'] .'</p>
+                                        <h5>Internet</h5>
+                                        <p>' . $row['internet'] .'</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>';
+    } else {
+        echo "ERROR: " . print_r($bd->errorInfo());
+    }
+
+    unset($stmt);
+
+    return $resultado;
+}
+
+#endregion
+
+
+#region Adds
+function addHabitacion () {
+    $bd = loadBBDD();
+    $sql = "INSERT INTO habitaciones (`id`, `m2`, `ventana`, `tipo_de_habitacion`, `servicio_limpieza`, `internet`, `precio`, `reservable`)
+                VALUES (null, ?, ?, ?, ?, ?, ?, ?);";
+
+    try {
+        $stmt = $bd->prepare($sql);
+
+        $stmt->bindValue(1, $_POST['m2']);
+        $stmt->bindValue(2, $_POST['ventana']);
+        $stmt->bindValue(3, $_POST['tipo']);
+        $stmt->bindValue(4, $_POST['servicio_limpieza']);
+        $stmt->bindValue(5, $_POST['internet']);
+        $stmt->bindValue(6, $_POST['precio']);
+        $stmt->bindValue(7, $_POST['reservable']);
+
+        $stmt->execute();
+    } 
+    catch (\Exception $e) {
+        $bd->rollback();
+        throw $e;
+    }
+    unset($stmt);
+}
 
 
 #endregion
 
 
+#region Updates
+function updateUsuario() {
+    $bd = loadBBDD();
+    $sql = "UPDATE usuarios SET nombre=?, email=?, telf=?, direccion=? WHERE id=?";
+    $stmt= $bd->prepare($sql);
+
+    $stmt->execute([$_POST['nombre'], $_POST['email'], $_POST['telf'], $_POST['direccion'], $_SESSION['usuario'][0]]);
+
+    if($_POST['password'] != ""){
+        $hash = password_hash($_POST['password'], PASSWORD_BCRYPT); 
+        $sql = "UPDATE usuarios SET password=? WHERE id=?";
+        $stmt= $bd->prepare($sql);
+
+        $stmt->execute([$hash, $_SESSION['usuario'][0]]);
+    }
+
+    getAlert("Datos modificados con éxito");
+}
+
+
+#endregion
+
+#region Mail
+
+require "vendor/autoload.php";
+use PHPMailer\PHPMailer\PHPMailer;
+
+function enviar_email_contacto() {
+    $res = leer_configCorreo (dirname(__FILE__) . "/config/correo.xml", dirname(__FILE__) . "/config/correo.xsd");
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPDebug = 0;  // cambiar a 1 o 2 para ver errores
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = "tls";
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 587;
+    $mail->Username = $res[0];  //usuario de gmail
+    $mail->Password = $res[1]; //contraseña de gmail          
+    $mail->SetFrom($_POST['email'], $_POST['nombre']); //No funciona en gmail por motivos de seguridad
+    $mail->AddReplyTo($_POST['email'], $_POST['nombre']);
+    $mail->Subject = utf8_decode($_POST['asunto']);
+    $mail->MsgHTML($_POST['mensaje']);
+    /* Divide la lista de correos por la coma */
+    $mail->AddAddress($res[0]);
+
+    if (!$mail->Send()) {
+        return $mail->ErrorInfo;
+    } else {
+        return "Correo enviado con éxito";
+    }
+}
+
+
+function leer_configCorreo ($nombre, $esquema) {
+    $config = new DOMDocument();
+    $config->load($nombre);
+    $res = $config->schemaValidate($esquema);
+    if ($res === FALSE) {
+        throw new InvalidArgumentException("Revise fichero de configuración");
+    }
+    $datos = simplexml_load_file($nombre);
+    $usu = $datos->xpath("//usuario");
+    $clave = $datos->xpath("//clave");
+    $resul = [];
+    $resul[] = $usu[0];
+    $resul[] = $clave[0];
+    return $resul;
+}
+#endregion
 
 ?>

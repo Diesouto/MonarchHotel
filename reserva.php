@@ -27,29 +27,7 @@
 
         <div id="contenedorfiltro" class="flex">
             <div id="habitaciones">
-                <div class="habitacion flex">
-                    <div class="foto">
-                        <img src="img/habitaciones/simple.png">
-                    </div>
-                    <div class="info">
-                        <h3>Habitación simple</h3>
-                        <h4>350€</h4>
-                        <ul>
-                            <li>
-                                <h5>Tamaño</h5>
-                                <p>30m2</p>
-                                <h5>Max Personas</h5>
-                                <p>4</p>
-                            </li>
-                            <li>
-                                <h5>Cama</h5>
-                                <p>Matrimonio</p>
-                                <h5>Servicios</h5>
-                                <p>Netflix, gym</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <?php echo getHabitaciones()?>
             </div>
 
             <div id="filtro">

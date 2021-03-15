@@ -15,8 +15,8 @@
         comprobar_sesion();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if ($_POST['cambiaDatos']) {
-
+            if ($_POST['cambiar']) {
+                updateUsuario();
             } 
             else if($_POST['logout']) {
                 logout();
@@ -38,14 +38,21 @@
     <div class="content">
         <h3>Tus datos</h3>
         <ul>
-            <li>Nombre: <?php echo $_SESSION['usuario'][1]?></li>
-            <li>Email: <?php echo $_SESSION['usuario'][2]?></li>
-            <li>Teléfono: <?php echo $_SESSION['usuario'][3]?></li>
-            <li>Dirección: <?php echo $_SESSION['usuario'][4]?></li>
+            <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
+                <li>Nombre: <input name="nombre" type="text" required value="<?php echo $_SESSION['usuario'][1]?>"></li>
+                <li>Email: <input name="email" type="text" required value="<?php echo $_SESSION['usuario'][2]?>"></li>
+                <li>Teléfono: <input name="telf" type="number" required value="<?php echo $_SESSION['usuario'][3]?>"></li>
+                <li>Dirección: <input name="direccion" type="text" required value="<?php echo $_SESSION['usuario'][4]?>"></li>
+                <li>Contraseña: <input name="password" type="password" placeholder="Nueva contraseña"></li>
+                <input id="cambiar" name="cambiar" class="form-row button" type="submit" value="Cambiar datos">
+            </form>
             <li>
                 <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
                     <input id="logout" name="logout" class="form-row button danger" type="submit" value="Cerrar Sesión">
                 </form>
+            </li>
+            <li>
+                
             </li>
         </ul>
     </div>
