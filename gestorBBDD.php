@@ -158,13 +158,13 @@ function getHabitaciones () {
                                     <h4>' . $row['precio'] .'</h4>
                                     <ul>
                                         <li>
-                                            <h5>Tamaño</h5>
+                                            <h5>Size</h5>
                                             <p>' . $row['m2'] .'m<sup>2</sup></p>
-                                            <h5>Ventana</h5>
+                                            <h5>Window</h5>
                                             <p>' . $row['ventana'] .'</p>
                                         </li>
                                         <li>
-                                            <h5>Servicio limpieza</h5>
+                                            <h5>Cleaning service</h5>
                                             <p>' . $row['servicio_limpieza'] .'</p>
                                             <h5>Internet</h5>
                                             <p>' . $row['internet'] .'</p>
@@ -177,7 +177,7 @@ function getHabitaciones () {
                                         <input name="ventana" type="hidden" value="' . $row['ventana'] .'">
                                         <input name="servicio_limpieza" type="hidden" value="' . $row['servicio_limpieza'] .'">
                                         <input name="internet" type="hidden" value="' . $row['internet'] .'">
-                                        <input name="cargarDatos" class="button" type="submit" value="Reservar">
+                                        <input name="cargarDatos" class="button" type="submit" value="Book">
                                     </form>
                                 </div>
                             </div>';
@@ -208,13 +208,13 @@ function getHabitacion ($id) {
                                 <h4>' . $row['precio'] .'</h4>
                                 <ul>
                                     <li>
-                                        <h5>Tamaño</h5>
+                                        <h5>Size</h5>
                                         <p>' . $row['m2'] .'</p>
-                                        <h5>Ventana</h5>
+                                        <h5>Window</h5>
                                         <p>' . $row['ventana'] .'</p>
                                     </li>
                                     <li>
-                                        <h5>Servicio limpieza</h5>
+                                        <h5>Cleaning service</h5>
                                         <p>' . $row['servicio_limpieza'] .'</p>
                                         <h5>Internet</h5>
                                         <p>' . $row['internet'] .'</p>

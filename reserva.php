@@ -17,13 +17,13 @@
 
     <div id="cabeceraPag">
         <div id="contenido-cabecera">
-            <h1>Reserva</h1>
+            <h1>Book now</h1>
         </div>
     </div>
 
     <div id="contentfiltro" class="content fondo-oscuro">
-        <h4>A tu gusto</h4>
-        <h3>Filtrar</h3>
+        <h4>To your liking</h4>
+        <h3>Filter</h3>
 
         <div id="contenedorfiltro" class="flex">
             <div id="habitaciones">
@@ -33,27 +33,27 @@
             <div id="filtro">
                 <form>
                     <ul>
-                        <li class="form-row"><p>Fecha</p></li>
+                        <li class="form-row"><p>Date</p></li>
                         <li class="form-row">
                             <input type="text" placeholder="Check In" onfocus="(this.type='date')">
                             <input type="text" placeholder="Check Out" onfocus="(this.type='date')">
                         </li>
                         <li id="spanTexto" class="form-row">
-                            <p>Personas</p>
-                            <p>Habitaciones</p>
+                            <p>People</p>
+                            <p>Room</p>
                         </li>
                         <li class="form-row">
                             <input placeholder="Pax." type="number">
-                            <input placeholder="Habitaciones" type="number">
+                            <input placeholder="Room" type="number">
                         </li>
                         <li class="form-row">
                             <div class="slidecontainer">
-                                <p>Precio < <span id="demo"></span></p>
+                                <p>Price < <span id="demo"></span></p>
                                 <input type="range" min="1" max="100" value="100" class="slider" id="myRange">
                             </div>
                         </li>
                         <li class="form-row">
-                            <input class="button redondo" value="Comprobar disponibilidad" type="submit">
+                            <input class="button redondo" value="Check availability" type="submit">
                         </li>
                     </ul>
                 </form>
