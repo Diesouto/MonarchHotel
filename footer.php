@@ -18,11 +18,11 @@
     </div>
     <ul class="inline ">
         <li><a href="#"><i class="far fa-copyright"></i>Monarch</a></li>
-        <li><a href="#">Sobre la compañía</a></li>
-        <li><a href="#">Información legal</a></li>
-        <li><a href="#">Política de privacidad</a></li>
-        <li><a href="#">Condiciones de reserva</a></li>
-        <li><a href="#">Política de cookies</a></li>
+        <li><a href="#">About the company</a></li>
+        <li><a href="#">Legal</a></li>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Book conditions</a></li>
+        <li><a href="#">Cookies policy</a></li>
     </ul>
 
 </footer>

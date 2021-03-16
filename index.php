@@ -19,8 +19,7 @@
             <form id=form-cabecera>
                 <input class="transparent" type="text" placeholder="Check In" onfocus="(this.type='date')">
                 <input class="transparent" type="text" placeholder="Check Out" onfocus="(this.type='date')">
-                <input class="transparent" placeholder="Habitaciones" type="number">
-                <input class="transparent" placeholder="Pax." type="number">
+                <input class="transparent" placeholder="Room" type="number">
                 <input class="button" value="Check Availability" type="submit">
             </form>
         </div>
@@ -30,8 +29,8 @@
         <div class="flex tarjeta">
             <div class="tarjeta-habitacion izquierda">
                 <h3>Our Rooms</h3>
-                <p>Lorem ipsum dolor sit amet</p>
-                <a href="#"><button class="button vermas">Ver más</button></a>
+                <p>Take a look and plan your stay.</p>
+                <a href="habitaciones.php"><button class="button vermas">See more</button></a>
             </div>
             <div class="tarjeta-imagen1">
                 <img src="img/habitaciones/doble.png">
@@ -44,9 +43,9 @@
             </div>
     
             <div class="tarjeta-habitacion derecha">
-                <h3>Our Services</h3>
-                <p>Lorem ipsum dolor sit amet</p>
-                <a href="#"><button class="button vermas">Ver más</button></a>
+                <h3>About us</h3>
+                <p>See us for who we are</p>
+                <a href="about.php"><button class="button vermas">See more</button></a>
             </div>
         </div>
 

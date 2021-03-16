@@ -14,7 +14,7 @@
         <div id="contenido-cabecera">
             <h1>Ups</h1>
             <hr>
-            <p>Ha ocurrido un error, pero puedes seguir navegando</p>
+            <p>Something went wrong, but you can keep browsing</p>
         </div>
     </div>
 

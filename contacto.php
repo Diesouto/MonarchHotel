@@ -21,7 +21,7 @@
 
     <div id="cabeceraPag">
         <div id="contenido-cabecera">
-            <h1>Contacto</h1>
+            <h1>Contact</h1>
         </div>
     </div>
 
@@ -30,31 +30,31 @@
         <?php if (isset($texto)) {echo "<p class='button'>$texto</p>";}?>
         
         <div id="mapa">
-            <h4>Encuéntranos</h4>
-            <h3>Mapa</h3>
+            <h4>Find us</h4>
+            <h3>Map</h3>
             <div id="map"></div>
         </div>
 
         <div>
-            <h4>A tu disposición</h4>
-            <h3>Contacto</h3>
+            <h4>We hear you</h4>
+            <h3>Contact</h3>
             <div class="flex">
                 <div id="contenedor-contacto">
                     <form id="form-contacto" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "POST">
-                        <p>Envíanos un correo</p>
+                        <p>Send us an email</p>
                         <ul>
                             <li class="form-row">
-                                <input name="nombre" class="borde" id="nombre" type="text" placeholder="Nombre">
+                                <input name="nombre" class="borde" id="nombre" type="text" placeholder="Name">
                                 <input name="email" class="borde" id="email" type="text" placeholder="Email">  
                             </li>
                             <li class="form-row">
-                                <input name="asunto" class="borde" id="asunto" type="text" placeholder="Asunto">
+                                <input name="asunto" class="borde" id="asunto" type="text" placeholder="Subject">
                             </li>
                             <li class="form-row">
-                                <input name="mensaje" class="borde" id="mensaje" type="text" placeholder="Mensaje">
+                                <input name="mensaje" class="borde" id="mensaje" type="text" placeholder="Message">
                             </li>
                             <li class="form-row">
-                                <input name="enviar_correo" class="button borde" type="submit" value="Enviar">
+                                <input name="enviar_correo" class="button borde" type="submit" value="Send">
                             </li>
                         </ul>
                         

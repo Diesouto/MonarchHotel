@@ -130,12 +130,12 @@ ul {
     text-align: right;
 }
 
-input {
+input, .input{
     border: none;
     height: 40px;
 }
 
-input:focus {
+input:focus, .input:focus {
     border: 3px solid $colorPrincipal;
     outline: none;
 }

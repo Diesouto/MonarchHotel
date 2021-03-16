@@ -2,6 +2,11 @@
 
 #region CargarBBDD
 
+/**
+ * Devuelve el puntero a la conexión a la BBDD
+ * 
+ * @return PDO
+ */
 function loadBBDD() {
     try {
         $res = leer_config(dirname(__FILE__) . "/config/configuracion.xml", dirname(__FILE__) . "/config/configuracion.xsd");
@@ -13,6 +18,18 @@ function loadBBDD() {
     }
 }
 
+/**
+ * Lee un fichero XML
+ * 
+ * Si el fichero de configuración existe y es válido, devuelve un array con tres
+ * valores: la cadena de conexión, el nombre de usuario y la clave.
+ * Si no encuentra el fichero o no es válido, lanza una excepción.
+ * 
+ * @param path $fichero_config_BBDD  Ruta del fichero con los datos de conexión a la BBDD
+ * @param path $esquema  Ruta del fichero XSD que valida el $fichero_config_BBDD
+ * 
+ * @return array
+ */
 function leer_config($fichero_config_BBDD, $esquema) {
     $config = new DOMDocument();
     $config->load($fichero_config_BBDD);
@@ -34,7 +51,19 @@ function leer_config($fichero_config_BBDD, $esquema) {
 }
 #endregion
 
+
 #region Login/Logout Usuarios
+
+/**
+ * Recupera una contraseña
+ * 
+ * Recupera la contraseña encriptada de la BBDD cuyo usuario (a través del
+ * parámetro nombre) es la dirección de correo del usuario que va a realizar el pedido
+ * 
+ * @param string $nombre Nombre del usuario del que queremos comparar la contraseña
+ * 
+ * @return string
+ */
 function loadPass($email) {
     $bd = loadBBDD();
     $ins = "select password from usuarios where email= '$email'";
@@ -47,6 +76,18 @@ function loadPass($email) {
     return $devol;
 }
 
+/**
+ * Comprueba los datos del login
+ * 
+ * Comprueba los datos que recibe del formulario del login. Si los datos son correctos
+ * devuelve un array con dos campos: codRes (el código del restaurante) y correo 
+ * con su correo. En caso de error devuelve false
+ * 
+ * @param string $nombre Nombre del usuario
+ * @param string $clave Contraseña del usuario
+ * 
+ * @return array
+ */
 function comprobar_usuario($email, $clave) {
     $devol = FALSE;
     $bd = loadBBDD();
@@ -61,12 +102,21 @@ function comprobar_usuario($email, $clave) {
     return $devol;
 }
 
+/**
+ * Comprueba si la sesión está iniciada
+ * 
+ * Si no está iniciada redirige al login
+ */
 function comprobar_sesion() {
     if (!isset($_SESSION['usuario'])) {
         header("Location: login.php?redirigido=true");
     }
 }
 
+
+/**
+ * Crea un usuario en la bbdd
+ */
 function signin() {
     if($_POST['password'] == $_POST['confpassword']){
         $bd = loadBBDD();
@@ -83,6 +133,10 @@ function signin() {
     }
 }
 
+/**
+ * Almacena variables de usuario en la $_SESSION
+ * 
+ */
 function login() {
     $usu = comprobar_usuario($_POST['email'], $_POST['password']);
     if ($usu === false) {
@@ -96,6 +150,9 @@ function login() {
     }
 }
 
+/**
+ * Cierra la sesión del usuario
+ */
 function logout() {
     comprobar_sesion();
     $_SESSION=array(); //Destruye las variables de sesión
@@ -109,12 +166,22 @@ function logout() {
 
 #region Gets
 
+/**
+ * Genera un alert
+ * @param mixed $texto Texto del alert
+ */
 function getAlert($texto) {
     echo "<script type='text/javascript'>
                 alert($texto);
           </script>";
 }
 
+/**
+ * Obtiene los tipos de habitación de la bbdd
+ * @param int $select Habitación seleccionada
+ * 
+ * @return string Con options para el select
+ */
 function getTiposHabitacion ($select = 0) {
     $bd = loadBBDD();
     $stmt = "";
@@ -140,7 +207,11 @@ function getTiposHabitacion ($select = 0) {
     return $resultado;
 }
 
-
+/**
+ * Obtiene las habitaciones de la bbdd
+ * 
+ * @return string Con habitaciones
+ */
 function getHabitaciones () {
     $bd = loadBBDD();
     $stmt = "";
@@ -158,26 +229,26 @@ function getHabitaciones () {
                                     <h4>' . $row['precio'] .'</h4>
                                     <ul>
                                         <li>
-                                            <h5>Tamaño</h5>
+                                            <h5>Size</h5>
                                             <p>' . $row['m2'] .'m<sup>2</sup></p>
-                                            <h5>Ventana</h5>
+                                            <h5>Window</h5>
                                             <p>' . $row['ventana'] .'</p>
                                         </li>
                                         <li>
-                                            <h5>Servicio limpieza</h5>
+                                            <h5>Cleaning service</h5>
                                             <p>' . $row['servicio_limpieza'] .'</p>
                                             <h5>Internet</h5>
                                             <p>' . $row['internet'] .'</p>
                                         </li>
                                     </ul>
-                                    <form action = "' . htmlspecialchars($_SERVER["PHP_SELF"]) .'" method = "POST">
+                                    <form action = "' . htmlspecialchars("payment.php") .'" method = "POST">
                                         <input name="tipo_de_habitacion" type="hidden" value="' . $row['tipo_de_habitacion'] .'">
                                         <input name="precio" type="hidden" value="' . $row['precio'] .'">
                                         <input name="m2" type="hidden" value="' . $row['m2'] .'">
                                         <input name="ventana" type="hidden" value="' . $row['ventana'] .'">
                                         <input name="servicio_limpieza" type="hidden" value="' . $row['servicio_limpieza'] .'">
                                         <input name="internet" type="hidden" value="' . $row['internet'] .'">
-                                        <input name="cargarDatos" class="button" type="submit" value="Reservar">
+                                        <input name="cargarDatos" class="button" type="submit" value="Book">
                                     </form>
                                 </div>
                             </div>';
@@ -191,6 +262,12 @@ function getHabitaciones () {
     return $resultado;
 }
 
+/**
+ * Obtiene una habitación por el id
+ * @param mixed $id id de la habitación a seleccionar
+ * 
+ * @return string
+ */
 function getHabitacion ($id) {
     $bd = loadBBDD();
     $stmt = "";
@@ -208,13 +285,13 @@ function getHabitacion ($id) {
                                 <h4>' . $row['precio'] .'</h4>
                                 <ul>
                                     <li>
-                                        <h5>Tamaño</h5>
+                                        <h5>Size</h5>
                                         <p>' . $row['m2'] .'</p>
-                                        <h5>Ventana</h5>
+                                        <h5>Window</h5>
                                         <p>' . $row['ventana'] .'</p>
                                     </li>
                                     <li>
-                                        <h5>Servicio limpieza</h5>
+                                        <h5>Cleaning service</h5>
                                         <p>' . $row['servicio_limpieza'] .'</p>
                                         <h5>Internet</h5>
                                         <p>' . $row['internet'] .'</p>
@@ -238,6 +315,11 @@ function getHabitacion ($id) {
 
 
 #region Adds
+
+
+/**
+ * Inserta una habitación en la bbdd
+ */
 function addHabitacion () {
     $bd = loadBBDD();
     $sql = "INSERT INTO habitaciones (`id`, `m2`, `ventana`, `tipo_de_habitacion`, `servicio_limpieza`, `internet`, `precio`, `reservable`)
@@ -264,6 +346,9 @@ function addHabitacion () {
 }
 
 
+/**
+ * Almacena en la sesión datos de la reserva
+ */
 function addDatosReserva() {
     $checkin = $_POST['checkin'];
     $chekout = $_POST['checkout'];
@@ -274,6 +359,9 @@ function addDatosReserva() {
     $_SESSION['reserva'][2] = $diasReserva;
 }
 
+/**
+ * Inserta una reserva en la base de datos
+ */
 function addReserva() {
     session_start();
     $bd = loadBBDD();
@@ -301,6 +389,11 @@ function addReserva() {
 
 
 #region Updates
+
+
+/**
+ * Actualiza los datos de un usuario de la base de datos
+ */
 function updateUsuario() {
     $bd = loadBBDD();
     $sql = "UPDATE usuarios SET nombre=?, email=?, telf=?, direccion=? WHERE id=?";
@@ -327,6 +420,12 @@ function updateUsuario() {
 require "vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 
+/**
+ * Envía el email de la página de contacto
+ * 
+ * Lee el fichero de configuración correo.xml para obtener la cuenta de correo usada para enviar los emails
+ * @return string
+ */
 function enviar_email_contacto() {
     $res = leer_configCorreo (dirname(__FILE__) . "/config/correo.xml", dirname(__FILE__) . "/config/correo.xsd");
     $mail = new PHPMailer();
@@ -353,6 +452,18 @@ function enviar_email_contacto() {
 }
 
 
+/**
+ * Lee un fichero XML
+ * 
+ * Si el fichero de configuración existe y es válido, devuelve un array con dos
+ * valores: el usuario y la clave.
+ * Si no encuentra el fichero o no es válido, lanza una excepción.
+ * 
+ * @param path $nombre  Ruta del fichero con los datos de correo electrónico
+ * @param path $esquema  Ruta del fichero XSD que valida el fichero de correo
+ * 
+ * @return array
+ */
 function leer_configCorreo ($nombre, $esquema) {
     $config = new DOMDocument();
     $config->load($nombre);

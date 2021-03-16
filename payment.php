@@ -14,45 +14,44 @@
     <?php
         include "gestorBBDD.php";
 
+        session_start();
+
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            //pagar();
+            if(isset($_POST['addReserva'])){
+              //addReserva();
+            }
         }
     ?>
 
 <div class="form_holder">
-<h2 class="fs-title" style="color:#fff;">steps jquery form with Icons</h2>
 <form id="msform">
   <ul id="progressbar">
-    <li class="active">Datos de la reserva</li>
-    <li>Datos del usuario</li>
-    <li>Pago</li>
+    <li class="active">Booking info</li>
+    <li>User data</li>
+    <li>Payment</li>
   </ul>
   <fieldset>
-    <h2 class="fs-title">Tu reserva</h2>
-    <h3 class="fs-subtitle">This is step 1</h3>
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="pass" placeholder="Password" />
-    <input type="password" name="cpass" placeholder="Confirm Password" />
+    <h2 class="fs-title">Your stay</h2>
+    <input type="text" name="tipo_habitacion" readonly value="<?php if(isset($_POST["precio"])){echo $_POST["tipo_de_habitacion"];}?>" />
+    <input type="text" name="precio" readonly value="<?php if(isset($_POST["precio"])){echo $_POST["precio"];}?>" />
+    <input type="text" name="checkin" placeholder="Check In" onfocus="(this.type='date')"/>
+    <input type="text" name="checkout" type="text" placeholder="Check Out" onfocus="(this.type='date')"/>
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
-    <h2 class="fs-title">Tus datos</h2>
-    <h3 class="fs-subtitle">Your presence on the social network</h3>
-    <input type="text" name="twitter" placeholder="Twitter" />
-    <input type="text" name="facebook" placeholder="Facebook" />
-    <input type="text" name="gplus" placeholder="Google Plus" />
+    <h2 class="fs-title">Your data</h2>
+    <input type="text" name="nombre" placeholder="Nombre" value="<?php if(isset($_SESSION["usuario"])){echo $_SESSION["usuario"][1];}?>" />
+    <input type="text" name="email" placeholder="Email" value="<?php if(isset($_SESSION["usuario"])){echo $_SESSION["usuario"][2];}?>" />
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
-    <h2 class="fs-title">Pagamiento</h2>
-    <h3 class="fs-subtitle">We will never sell it</h3>
-    <input type="text" name="fname" placeholder="First Name" />
-    <input type="text" name="lname" placeholder="Last Name" />
-    <input type="text" name="phone" placeholder="Phone" />
-    <textarea name="address" placeholder="Address"></textarea>
+    <h2 class="fs-title">Payment</h2>
+    <input type="text" name="IBAN" placeholder="Credit Card" />
+    <input type="text" name="PIN" placeholder="Security Digits" />
+    <input type="text" name="expiration" placeholder="Expiration Date" />
     <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    <input type="submit" name="addReserva" class="submit action-button" value="Book" />
   </fieldset>
 </form>
 </div>   
