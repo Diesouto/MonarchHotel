@@ -1,6 +1,6 @@
 # MonarchHotel
 :rocket:Fully developed hotel web. (Work in progress... :zzz:)
-## Código
+## Code
 https://github.com/Diesouto/MonarchHotel
-## Web en producción
+## Website
 http://monarch.teis50.dewordpress.org/index.php
