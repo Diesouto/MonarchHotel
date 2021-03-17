@@ -85,6 +85,10 @@ p {
     font-weight: normal;
 }
 
+sup {
+    font-size: 13px;
+}
+
 hr {
     width: 5em;
 }
@@ -94,8 +98,17 @@ ul {
     padding: 0;
 }
 
-.danger {
+.warning {
     color:$colorWarning;
+}
+
+.danger {
+    color: white;
+    background-color: $colorDanger;
+}
+
+.danger:hover {
+    color: $colorDanger;
 }
 
 .content {
@@ -117,12 +130,12 @@ ul {
     text-align: right;
 }
 
-input {
+input, .input{
     border: none;
     height: 40px;
 }
 
-input:focus {
+input:focus, .input:focus {
     border: 3px solid $colorPrincipal;
     outline: none;
 }
@@ -157,4 +170,5 @@ input:focus {
     @import '_about';
     @import '_login';
     @import '_signin';
+    @import '_cuenta';
     @import '_footer';
