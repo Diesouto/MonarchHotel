@@ -3,4 +3,4 @@
 ## Código
 https://github.com/Diesouto/MonarchHotel
 ## Web en producción
-http://monarch.teis48.dewordpress.org/
+http://monarch.teis50.dewordpress.org/index.php
