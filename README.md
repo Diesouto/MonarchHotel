@@ -1,4 +1,4 @@
 # MonarchHotel
-:rocket:Fully developed hotel web. (Work in progress... :zzz:)
+DAW project: design and develop a website for a luxurious hotel.
 ## Code
 https://github.com/Diesouto/MonarchHotel
